@@ -17,7 +17,7 @@ const display = (movies) => {
       
     
     <div class="like">
-    <button id="btn"><i class="fa-solid fa-heart like-Btn"></i></button>
+    <button id="btn"><i class="fa fa-solid fa-heart like-Btn"></i></button>
     <input type="number" class="input" value="0" name="">
     </div>
     <div class="Btn-reserve">

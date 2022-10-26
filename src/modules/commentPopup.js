@@ -1,6 +1,4 @@
 const commentPopup = (btn, popupComment, movie) => {
-  const allElements = btn.parentElement.parentElement.children;
-
   popupComment.innerHTML += `
     <div class="popup">
     <span class="close-btn">X</span>

@@ -40,12 +40,11 @@
   justify-content: space-around;
 }
 
-
-
 .like {
   width: 40%;
- margin-top: 15px;
- margin-left: 65%;
+  margin-top: 15px;
+  margin-left: 65%;
+
   /* margin: 1em 0 1em 5rem; */
   display: flex;
   align-items: center;

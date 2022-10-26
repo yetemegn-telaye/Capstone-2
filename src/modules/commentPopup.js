@@ -1,4 +1,4 @@
-const commentPopup = (btn, popupComment,movie) => {
+const commentPopup = (btn, popupComment, movie) => {
   const allElements = btn.parentElement.parentElement.children;
 
   popupComment.innerHTML += `
@@ -27,11 +27,9 @@ const commentPopup = (btn, popupComment,movie) => {
   document.body.appendChild(popupComment);
 };
 
-const commentClicked = (btns,movies) => {
-
+const commentClicked = (btns, movies) => {
   btns.forEach((btn) => {
     btn.addEventListener('click', () => {
-       
       const popupComment = document.createElement('div');
       popupComment.classList.add('popup-window');
 
@@ -40,15 +38,12 @@ const commentClicked = (btns,movies) => {
       } else if (popupComment.style.display === 'block') {
         popupComment.style.display = 'none';
       }
-      movies.forEach(movie=>{
-             
-        if(movie.show.id=== Number(btn.id)){
-    
-            commentPopup(btn, popupComment,movie.show);
+      movies.forEach((movie) => {
+        if (movie.show.id === Number(btn.id)) {
+          commentPopup(btn, popupComment, movie.show);
         }
-    
-  })
-     
+      });
+
       const closeBtn = document.querySelectorAll('.close-btn');
       closeBtn.forEach((closeBt) => {
         closeBt.addEventListener('click', () => {

@@ -16,8 +16,8 @@ const display = (movies) => {
         
     
     <div class="like">
-    <button id="btn"><i class="fa fa-solid fa-heart like-Btn"></i></button>
-    <input type="number" class="input" value="0" name="">
+    <button id="btn"><i id=${movie.show.id} class="fa fa-solid fa-heart like-Btn"></i></button>
+    <p class="count"></p>
     </div>
     <div class="Btn-reserve">
         <button class="comment-btn" id=${movie.show.id}>Comment</button>

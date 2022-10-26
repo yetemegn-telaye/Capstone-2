@@ -20,6 +20,7 @@
 
 .movie-list {
   width: 31%;
+  gap: 20px;
   border: 2px black solid;
   border-radius: 20px;
   margin-bottom: 2em;
@@ -32,14 +33,20 @@
 }
 
 .type-year {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   align-items: center;
   gap: 1em;
+  justify-content: space-around;
 }
+
+
 
 .like {
   width: 40%;
-  margin: 1em 0 1em 5rem;
+ margin-top: 15px;
+ margin-left: 65%;
+  /* margin: 1em 0 1em 5rem; */
   display: flex;
   align-items: center;
 }
@@ -74,13 +81,15 @@
 
 .Btn-reserve {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1em;
 }
 
 .comment-btn,
 .Reservation {
-  padding: 5px;
+  padding: 10px;
   font-size: 15px;
   color: rebeccapurple;
   border-radius: 10px;

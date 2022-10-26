@@ -7,10 +7,9 @@ const getMovies = async () => {
   const response = await fetch(`${baseUrl}/?q=girls`);
   const movies = await response.json();
   display(movies);
-
   const commentBtns = document.querySelectorAll('.comment-btn');
 
-  commentClicked(commentBtns);
+  commentClicked(commentBtns,movies);
 };
 
 export default getMovies;

@@ -143,3 +143,10 @@
   border: 2px solid black;
   padding: 5px;
 }
+
+.comments-input {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

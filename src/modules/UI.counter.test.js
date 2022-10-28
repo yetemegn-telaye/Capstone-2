@@ -1,4 +1,4 @@
-import counter from './UI.counter.js';
+const { counter } = require('./UI.counter.js');
 
 describe('Count movies displayed', () => {
   test('Empty array', () => {

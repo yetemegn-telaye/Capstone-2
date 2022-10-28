@@ -7,7 +7,7 @@
   "description": "Displays top-rated girl's movies that you can like and add comment on.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "start": "webpack serve --open"
   },

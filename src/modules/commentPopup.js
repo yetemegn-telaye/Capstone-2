@@ -16,7 +16,7 @@ const commentPopup = async (popupComment, movie,num) => {
             <p>Duration: ${movie.runtime}</p>
             </div>
             <h4 class='count-display'>Comments ${num} </h4>
-            <div class='comments-div'>
+            <div class='comments-div' id="com-div">
 
             </div>
             <h4>Add a comment</h4>
@@ -42,26 +42,15 @@ const commentClicked =  (btns, movies) => {
         popupComment.style.display = 'none';
       }
 
-      const comments = await getComments(btn.id);
-      const num = countComments(comments);
-
+      let comments = await getComments(btn.id);
+      let num = countComments(comments);
       movies.forEach((movie) => {
         if (movie.show.id === Number(btn.id)) {
          
           commentPopup(popupComment, movie.show,num);
         }
       });
-      const commentDiv = document.querySelectorAll('.comments-div');
-      
-      comments.forEach(com=>{
-        const p = document.createElement('p');
-        p.innerHTML= com.username;
-        commentDiv.forEach(div=>{
-          div.appendChild(p);
-        })
-  
-      })
-      console.log(commentDiv);
+     
      
 
       const closeBtn = document.querySelectorAll('.close-btn');
@@ -71,9 +60,21 @@ const commentClicked =  (btns, movies) => {
         });
       });
 
+    
+      
+      const commentDiv = document.querySelectorAll('.comments-div');
+      comments.forEach(com=>{
+        const p = document.createElement('p');
+        p.innerHTML= `${com.creation_date} ${com.username}: ${com.comment}`;
+        commentDiv.forEach(div=>{
+          div.appendChild(p);
+          
+        })
+      })
+    
       const addCommentBtn = document.querySelectorAll('.add-comment');
       addCommentBtn.forEach(btn=>{
-        btn.addEventListener('click',()=>{
+        btn.addEventListener('click', async () => {
           const commentInput = btn.previousElementSibling;
           const nameInput = commentInput.previousElementSibling;
           if(commentInput.value!=='' && nameInput.value!==''){
@@ -81,12 +82,10 @@ const commentClicked =  (btns, movies) => {
            nameInput.value='';
            commentInput.value='';
           }
-          
+          $("#com-div").load(location.href + " #com-div");
         })
-      })
+      })   
 
-    
-         
     });
     
    

@@ -40,7 +40,7 @@ const commentClicked = (btns, movies) => {
         popupComment.style.display = 'none';
       }
 
-      const comments = await getComments(btn.id);
+      let comments = await getComments(btn.id);
       const num = countComments(comments);
 
       movies.forEach((movie) => {
@@ -75,6 +75,8 @@ const commentClicked = (btns, movies) => {
             nameInput.value = '';
             commentInput.value = '';
           }
+          comments = await getComments(btn.id);
+          window.document.location.reload();
         });
       });
     });

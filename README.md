@@ -98,6 +98,12 @@ npx eslint .
 
 Give a ⭐ if you like this project!
 
+## Acknowledgments
+
+- Microverse Team.
+- CC lincence Team.
+- Coding partner.
+
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.

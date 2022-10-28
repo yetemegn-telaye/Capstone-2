@@ -10,9 +10,9 @@ const getMovies = async () => {
   const response = await fetch(`${baseUrl}/?q=girls`);
   const movies = await response.json();
   const likesCounter = await getLikes();
-  
-  display(movies,likesCounter);
-  
+
+  display(movies, likesCounter);
+
   const commentBtns = document.querySelectorAll('.comment-btn');
 
   commentClicked(commentBtns, movies);
@@ -21,12 +21,8 @@ const getMovies = async () => {
     btn.addEventListener('click', () => {
       postLikes(url, btn.id, btn.parentElement.nextElementSibling);
       getLikes();
-      
     });
   });
-
-
-  
 };
 
 export default getMovies;

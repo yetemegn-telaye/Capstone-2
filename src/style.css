@@ -12,12 +12,12 @@
 }
 
 .logo {
-  color:chocolate;
+  color: chocolate;
   text-decoration-line: line-through;
   font-size: 2em;
   border: 1px solid black;
   border-radius: 20px;
-  background-color:yellow;
+  background-color: yellow;
 }
 
 .ul-styles {
@@ -71,7 +71,6 @@ li {
   width: 40%;
   margin-top: 15px;
   margin-left: 65%;
-  margin: 1em 0 1em 5rem;
   display: flex;
   align-items: center;
 }

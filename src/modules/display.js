@@ -1,8 +1,9 @@
+import counter from './UI.counter.js';
+
 const display = (movies, likesCounter) => {
   const moviesContainer = document.querySelector('.movies-container');
 
   movies.forEach((movie) => {
-    
     moviesContainer.innerHTML += `
         <div class="movie-list" >
     <h1 class="movie-Name">${movie.show.name}</h1>
@@ -28,20 +29,17 @@ const display = (movies, likesCounter) => {
     </div>
     </div>
         `;
-       
-  }
- 
-  );
-  const likeP =document.querySelectorAll('.count');
-  likeP.forEach(p=>{
-    likesCounter.forEach(item=>{
-        if(p.id==item.item_id){
-            p.innerHTML=item.likes;
-        }
-    })
-  })
-
-   
+  });
+  const likeP = document.querySelectorAll('.count');
+  likeP.forEach((p) => {
+    likesCounter.forEach((item) => {
+      if (p.id === item.item_id) {
+        p.innerHTML = item.likes;
+      }
+    });
+  });
+  const titleCount = document.querySelector('.title');
+  titleCount.innerHTML = `Movies(${counter(movies)})`;
 };
 
 export default display;

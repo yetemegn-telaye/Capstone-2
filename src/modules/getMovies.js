@@ -21,7 +21,7 @@ const getMovies = async () => {
     btn.addEventListener('click', () => {
       postLikes(url, btn.id, btn.parentElement.nextElementSibling);
       getLikes();
-
+      
     });
   });
 

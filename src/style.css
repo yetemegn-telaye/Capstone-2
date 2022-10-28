@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.displa-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.logo {
+  color: chocolate;
+  text-decoration-line: line-through;
+  font-size: 2em;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: yellow;
+}
+
+.ul-styles {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+li {
+  margin: 2rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.title {
+  color: burlywood;
+  text-decoration: underline;
+}
+
+.movies-container {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.movie-list {
+  width: 31%;
+  gap: 20px;
+  border: 2px black solid;
+  border-radius: 20px;
+  margin-bottom: 2em;
+  padding: 1rem;
+  background-color: antiquewhite;
+}
+
+.images {
+  width: 90%;
+}
+
+.type-year {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 1em;
+  justify-content: space-around;
+}
+
+.like {
+  width: 40%;
+  margin-top: 15px;
+  margin-left: 65%;
+  display: flex;
+  align-items: center;
+}
+
+#btn {
+  border: none;
+  background-color: antiquewhite;
+}
+
+.input {
+  width: 50px;
+  border: none;
+  background-color: antiquewhite;
+  color: black;
+  font-size: 30px;
+  pointer-events: none;
+}
+
+.like-Btn {
+  background-color: antiquewhite;
+  border: none;
+  font-size: 32px;
+  padding: 0 15px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#footer {
+  text-align: center;
+  padding: 1em;
+  border-top: 2px solid black;
+  font-size: 1rem;
+}
+
+.like-Btn:active {
+  color: red;
+  transform: scale(1.2);
+}
+
+.Btn-reserve {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.comment-btn,
+.Reservation {
+  padding: 10px;
+  font-size: 15px;
+  color: rebeccapurple;
+  border-radius: 10px;
+}
+
+.popup-window {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 254);
+}
+
+.close-btn {
+  font-size: xx-large;
+  font-weight: bolder;
+  float: right;
+  margin-right: 10px;
+}
+
+.close-btn:hover {
+  cursor: pointer;
+}
+
+.popup {
+  position: fixed;
+  overflow-y: scroll;
+  top: 20px;
+  bottom: 20px;
+  left: 90px;
+  width: 88%;
+  height: 98%;
+  background-color: blanchedalmond;
+  border: 2px solid black;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-self: center;
+}
+
+.popup-detail {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 30px;
+}
+
+.comment-input {
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.comments-input {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

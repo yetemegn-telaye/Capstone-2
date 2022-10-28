@@ -1,4 +1,4 @@
-import { addComment, countComments, getComments } from './comment.js';
+import { addComment, getComments, countComments } from './comment.js';
 
 const commentPopup = async (popupComment, movie, num) => {
   popupComment.innerHTML += `
@@ -42,6 +42,7 @@ const commentClicked = (btns, movies) => {
 
       const comments = await getComments(btn.id);
       const num = countComments(comments);
+
       movies.forEach((movie) => {
         if (movie.show.id === Number(btn.id)) {
           commentPopup(popupComment, movie.show, num);

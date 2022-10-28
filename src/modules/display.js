@@ -1,4 +1,4 @@
-import counter from './UI.counter.js';
+import { counter } from './UI.counter.js';
 
 const display = (movies, likesCounter) => {
   const moviesContainer = document.querySelector('.movies-container');

@@ -1,4 +1,6 @@
-const commentPopup = (btn, popupComment, movie) => {
+import { addComment, countComments, getComments } from './comment.js';
+
+const commentPopup = async (popupComment, movie, num) => {
   popupComment.innerHTML += `
     <div class="popup">
     <span class="close-btn">X</span>
@@ -12,13 +14,14 @@ const commentPopup = (btn, popupComment, movie) => {
             <p>Language : ${movie.language}</p>
             <p>Duration: ${movie.runtime}</p>
             </div>
-            <h4>Comments (no. comments)</h4>
-            <p>03/11/2021 Alex: I'd love to buy it!</p>
-            <p>03/11/2021 Mia: I love!</p>
+            <h4 class='count-display'>Comments ${num} </h4>
+            <div class='comments-div' id="com-div">
+
+            </div>
             <h4>Add a comment</h4>
             <input type="text" placeholder="Your name" name="name" class="comment-input"/>
             <input type="textarea" placeholder="Your insights" name="comment" class="comment-input"/>
-            <button class="comment-btn add-comment">Comment</button>
+            <button class="comment-btn add-comment" id=${movie.id}>Comment</button>
         </div>
         </div>
     `;
@@ -27,7 +30,7 @@ const commentPopup = (btn, popupComment, movie) => {
 
 const commentClicked = (btns, movies) => {
   btns.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', async () => {
       const popupComment = document.createElement('div');
       popupComment.classList.add('popup-window');
 
@@ -36,9 +39,12 @@ const commentClicked = (btns, movies) => {
       } else if (popupComment.style.display === 'block') {
         popupComment.style.display = 'none';
       }
+
+      const comments = await getComments(btn.id);
+      const num = countComments(comments);
       movies.forEach((movie) => {
         if (movie.show.id === Number(btn.id)) {
-          commentPopup(btn, popupComment, movie.show);
+          commentPopup(popupComment, movie.show, num);
         }
       });
 
@@ -46,6 +52,28 @@ const commentClicked = (btns, movies) => {
       closeBtn.forEach((closeBt) => {
         closeBt.addEventListener('click', () => {
           popupComment.style.display = 'none';
+        });
+      });
+
+      const commentDiv = document.querySelectorAll('.comments-div');
+      comments.forEach((com) => {
+        const p = document.createElement('p');
+        p.innerHTML = `${com.creation_date} ${com.username}: ${com.comment}`;
+        commentDiv.forEach((div) => {
+          div.appendChild(p);
+        });
+      });
+
+      const addCommentBtn = document.querySelectorAll('.add-comment');
+      addCommentBtn.forEach((btn) => {
+        btn.addEventListener('click', async () => {
+          const commentInput = btn.previousElementSibling;
+          const nameInput = commentInput.previousElementSibling;
+          if (commentInput.value !== '' && nameInput.value !== '') {
+            addComment(btn.id, nameInput.value, commentInput.value);
+            nameInput.value = '';
+            commentInput.value = '';
+          }
         });
       });
     });

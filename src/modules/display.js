@@ -1,4 +1,6 @@
-const display = (movies) => {
+import counter from './UI.counter.js';
+
+const display = (movies, likesCounter) => {
   const moviesContainer = document.querySelector('.movies-container');
 
   movies.forEach((movie) => {
@@ -17,7 +19,9 @@ const display = (movies) => {
     
     <div class="like">
     <button id="btn"><i id=${movie.show.id} class="fa fa-solid fa-heart like-Btn"></i></button>
-    <p class="count"></p>
+    <p class="count" id=${movie.show.id}>
+   
+    </p>
     </div>
     <div class="Btn-reserve">
         <button class="comment-btn" id=${movie.show.id}>Comment</button>
@@ -26,6 +30,16 @@ const display = (movies) => {
     </div>
         `;
   });
+  const likeP = document.querySelectorAll('.count');
+  likeP.forEach((p) => {
+    likesCounter.forEach((item) => {
+      if (p.id === item.item_id) {
+        p.innerHTML = item.likes;
+      }
+    });
+  });
+  const titleCount = document.querySelector('.title');
+  titleCount.innerHTML = `Movies(${counter(movies)})`;
 };
 
 export default display;

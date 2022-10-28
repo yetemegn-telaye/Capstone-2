@@ -8,15 +8,6 @@ const getComments = async (itemId) => {
   return commentsData;
 };
 
-const countComments = (commentsArray) => {
-  let countComment = 0;
-
-  for (let i = 0; i < commentsArray.length; i += 1) {
-    countComment += 1;
-  }
-  return countComment;
-};
-
 const addComment = async (item1, name, message) => {
   await fetch(commentUrl, {
 

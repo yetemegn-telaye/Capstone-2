@@ -1,6 +1,7 @@
+import apiKey from '../../apiKey.js';
 import { countComments } from './commentCounter.js';
 
-const commentUrl = ('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/eC8v1nWSCKC4m4T5bPlw/comments/');
+const commentUrl = (`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${apiKey}/comments/`);
 
 const getComments = async (itemId) => {
   const comments = await fetch(`${commentUrl}?item_id=${itemId}`);

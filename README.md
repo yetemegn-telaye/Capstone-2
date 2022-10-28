@@ -24,11 +24,22 @@ live demo here
 ```bash
 git clone https://github.com/yetemegn-telaye/Top-rated-movies.git
 ```
-3. To access cloned directory run:
+2. To access cloned directory run:
 ```bash
 cd Top-rated-movies
-```
-3. Open it with the live server
+
+3. Open postman or anyother API console 
+
+4. use this base Url: https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/ 
+ with a POST method inorder to get an apiKey for your project
+
+ 5. Create a new file on the root directory with the name 'apiKey.js'
+
+ 6. export a constant there by giving it the api key that you generated. For instance,
+ " export const apiKey = 'value you generated' " 
+  note: make sure you use the variable apiKey exactly as this one.
+ 
+
 
 ### Install
 > To install linters and other project's dependencies run:
@@ -83,9 +94,6 @@ npx eslint .
 
 
 
-
-
-
 ## Show your support
 
 Give a ⭐ if you like this project!
@@ -93,3 +101,4 @@ Give a ⭐ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+

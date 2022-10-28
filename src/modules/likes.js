@@ -1,4 +1,6 @@
-const url = ('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/eC8v1nWSCKC4m4T5bPlw/likes/');
+import apiKey from '../../apiKey.js';
+
+const url = (`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/${apiKey}/likes/`);
 
 const getLikes = async () => {
   const resolve = await fetch(url);

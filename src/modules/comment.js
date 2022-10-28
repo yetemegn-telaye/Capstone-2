@@ -1,17 +1,11 @@
+import { countComments } from './commentCounter.js';
+
 const commentUrl = ('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/eC8v1nWSCKC4m4T5bPlw/comments/');
 
-const getComments = async (item_id) => {
-  const comments = await fetch(`${commentUrl}?item_id=${item_id}`);
+const getComments = async (itemId) => {
+  const comments = await fetch(`${commentUrl}?item_id=${itemId}`);
   const commentsData = await comments.json();
   return commentsData;
-};
-
-const countComments = (commentsArray) => {
-  let countComment = 0;
-  commentsArray.forEach((comment) => {
-    countComment++;
-  });
-  return countComment;
 };
 
 const addComment = async (item1, name, message) => {

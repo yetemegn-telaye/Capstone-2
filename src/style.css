@@ -4,10 +4,37 @@
   box-sizing: border-box;
 }
 
-.title {
+.displa-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem;
+}
+
+.logo {
+  color: chocolate;
+  text-decoration-line: line-through;
+  font-size: 2em;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: yellow;
+}
+
+.ul-styles {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+li {
   margin: 2rem;
   text-align: center;
   font-size: 3rem;
+}
+
+.title {
+  color: burlywood;
+  text-decoration: underline;
 }
 
 .movies-container {
@@ -44,8 +71,6 @@
   width: 40%;
   margin-top: 15px;
   margin-left: 65%;
-
-  /* margin: 1em 0 1em 5rem; */
   display: flex;
   align-items: center;
 }
@@ -71,6 +96,13 @@
   padding: 0 15px;
   margin-left: 20px;
   cursor: pointer;
+}
+
+#footer {
+  text-align: center;
+  padding: 1em;
+  border-top: 2px solid black;
+  font-size: 1rem;
 }
 
 .like-Btn:active {

@@ -30,9 +30,11 @@ const addComment = async (item1,name,message)=>{
         },
       });
      
+       
+      
       const commentsArray = await getComments(item1);
-      console.log(commentsArray);
       countComments(commentsArray);
+      return commentsArray;
       
 }
 

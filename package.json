@@ -7,7 +7,7 @@
   "description": "Displays top-rated girl's movies that you can like and add comment on.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack serve --open"
   },
@@ -41,7 +41,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "jest-environment-jsdom": "^29.2.2",
     "jsdom": "^20.0.1"
   }
 }

@@ -1,3 +1,3 @@
 const counter = (count) => count.length;
 
-module.exports = { counter };
+export default counter;

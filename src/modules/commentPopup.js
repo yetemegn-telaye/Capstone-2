@@ -1,7 +1,6 @@
-import { addComment, countComments, getComments } from "./comment.js";
+import { addComment, countComments, getComments } from './comment.js';
 
-const commentPopup = async (popupComment, movie,num) => {
- 
+const commentPopup = async (popupComment, movie, num) => {
   popupComment.innerHTML += `
     <div class="popup">
     <span class="close-btn">X</span>
@@ -27,10 +26,9 @@ const commentPopup = async (popupComment, movie,num) => {
         </div>
     `;
   document.body.appendChild(popupComment);
-  
 };
 
-const commentClicked =  (btns, movies) => {
+const commentClicked = (btns, movies) => {
   btns.forEach((btn) => {
     btn.addEventListener('click', async () => {
       const popupComment = document.createElement('div');
@@ -42,16 +40,13 @@ const commentClicked =  (btns, movies) => {
         popupComment.style.display = 'none';
       }
 
-      let comments = await getComments(btn.id);
-      let num = countComments(comments);
+      const comments = await getComments(btn.id);
+      const num = countComments(comments);
       movies.forEach((movie) => {
         if (movie.show.id === Number(btn.id)) {
-         
-          commentPopup(popupComment, movie.show,num);
+          commentPopup(popupComment, movie.show, num);
         }
       });
-     
-     
 
       const closeBtn = document.querySelectorAll('.close-btn');
       closeBtn.forEach((closeBt) => {
@@ -60,39 +55,29 @@ const commentClicked =  (btns, movies) => {
         });
       });
 
-    
-      
       const commentDiv = document.querySelectorAll('.comments-div');
-      comments.forEach(com=>{
+      comments.forEach((com) => {
         const p = document.createElement('p');
-        p.innerHTML= `${com.creation_date} ${com.username}: ${com.comment}`;
-        commentDiv.forEach(div=>{
+        p.innerHTML = `${com.creation_date} ${com.username}: ${com.comment}`;
+        commentDiv.forEach((div) => {
           div.appendChild(p);
-          
-        })
-      })
-    
+        });
+      });
+
       const addCommentBtn = document.querySelectorAll('.add-comment');
-      addCommentBtn.forEach(btn=>{
+      addCommentBtn.forEach((btn) => {
         btn.addEventListener('click', async () => {
           const commentInput = btn.previousElementSibling;
           const nameInput = commentInput.previousElementSibling;
-          if(commentInput.value!=='' && nameInput.value!==''){
-           addComment(btn.id,nameInput.value,commentInput.value);
-           nameInput.value='';
-           commentInput.value='';
+          if (commentInput.value !== '' && nameInput.value !== '') {
+            addComment(btn.id, nameInput.value, commentInput.value);
+            nameInput.value = '';
+            commentInput.value = '';
           }
-          $("#com-div").load(location.href + " #com-div");
-        })
-      })   
-
+        });
+      });
     });
-    
-   
-  
-  
   });
-  
 };
 
 export default commentClicked;
